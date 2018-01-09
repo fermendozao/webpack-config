@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 let config = {
   entry: './src/index.js',
@@ -16,13 +17,16 @@ let config = {
       },
       {
         test: /\.scss$/,
-        loader: ['style-loader', 'css-loader', 'sass-loader']
-        // sass-loader compiles SCSS
-        // css-loader allows to require the css
-        // style-loader injects it to the page
-      }
+        use: ExtractTextWebpackPlugin.extract({
+          use: ['css-loader', 'sass-loader'],
+          fallback: 'style-loader'
+        })
+      }     
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextWebpackPlugin('styles.css')
+  ]
 }
 
 module.exports = config;
