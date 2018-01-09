@@ -1,10 +1,7 @@
 require('./assets/stylesheets/styles.scss')
 
-class Car {
-  manufacturer(car) {
-    document.write(`I have a ${car}`)
-  }
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app/App.jsx';
 
-const bmw = new Car;
-bmw.manufacturer('bmw');
+ReactDOM.render(<App />, document.getElementById('root'));
