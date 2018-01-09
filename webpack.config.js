@@ -26,7 +26,7 @@ let config = {
       {
         test: /\.scss$/,
         use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
-          use: ['css-loader', 'sass-loader'],
+          use: ['css-loader', 'sass-loader', 'postcss-loader'],
           fallback: 'style-loader'
         })),
       },
