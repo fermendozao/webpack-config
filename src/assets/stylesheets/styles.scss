@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+$brand-primary: rgb(53, 126, 221);
+$brand-secondary: rgb(101, 30, 168);
+$font-size: 5em;
+$roboto: "Roboto Condensed", Helvetica, Arial, sans-serif;
+
+body {
+  height: 100vh;
+  background: $brand-primary;
+  color: $brand-secondary;
+  font-size: $font-size;
+  font-weight: 100;
+  font-family: $roboto;
+}
